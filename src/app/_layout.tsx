@@ -12,10 +12,10 @@ const RootLayout=()=>{
             }
         }>
             <Stack.Screen name="index" options={{headerTitle:"Remime!"}}/>
+            <Stack.Screen name="clock" options={{headerTitle:"Clock"}}/>
             <Stack.Screen name="pomodoro" options={{headerTitle:"Pomodoro"}}/>
             <Stack.Screen name="timer" options={{headerTitle:"Timer"}}/>
             <Stack.Screen name="stopwatch" options={{headerTitle:"Stopwatch"}}/>
-            <Stack.Screen name="settings" options={{headerTitle:"Settings"}}/>
         </Stack>
     );
 }

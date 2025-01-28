@@ -25,6 +25,17 @@ const st=StyleSheet.create({
     contentSmall:{
         flexDirection:"row"
     },
+    textInput:{
+        color: "#cdd6f4",
+        fontSize: 25,
+        fontWeight:"bold"
+    },
+    textNormal:{
+        color:"#cdd6f4",
+        fontSize:20,
+        fontWeight:200,
+        margin:10
+    }
     
 });
 
