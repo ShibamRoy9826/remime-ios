@@ -8,6 +8,7 @@ import st from "../utils/styles";
 
 const TimerScreen = () => {
    const [isRunning, setIsRunning] = useState(false);
+    const [isRinging, setIsRinging] = useState(false);
     const [time,setTime] = useState(0);
     const [targetTime,setTargetTime] = useState(10);
     const [sound,setSound] = useState(null);
@@ -27,13 +28,20 @@ const TimerScreen = () => {
         require('../assets/audio/ring.mp3')
       );
       setSound(sound);
+      setIsRinging(true);
       await sound.playAsync();
+      sound.setOnPlaybackStatusUpdate((status) => {
+        if (status.didJustFinish) {
+         setIsRinging(false);
+        }
+      });
     };
     const mute = async()=>{
       if (sound){
         await sound.stopAsync();
         await sound.unloadAsync();
       }
+      setIsRinging(false);
     }
     React.useEffect(()=>{
       return sound
@@ -121,11 +129,22 @@ const TimerScreen = () => {
     <View style={st.bgContainer}>
       <TextInput style={st.textInput} value={text} editable={isEditable} onChangeText={(newText) => setText(newText)} placeholder="What is this timer for?"></TextInput>
      <BoxModComponent url="timer" smallTxt={formatTarget(targetTime)} text={format(time)} width="85%" height="20%"  fontSize="35" fontWeight="bold"/>
-     <View style={styles.container}>
-       <ButtonComponent imageSource={isRunning ? require("../assets/images/pause.png"): require("../assets/images/start.png")} imageWidth="30" imageHeight="30" onpress={toggleWatch} text={isRunning? "Pause" : "Start"} width="28%" height="60%" fontSize="30" fontWeight="bold"/>
+     {
+      isRinging? <View style={styles.container}>
+      <ButtonComponent imageSource={isRunning ? require("../assets/images/pause.png"): require("../assets/images/start.png")} imageWidth="30" imageHeight="30" onpress={toggleWatch} text={isRunning? "Pause" : "Start"} width="20%" height="60%" fontSize="30" fontWeight="bold"/>
 
-       <ButtonComponent imageSource={require("../assets/images/reset.png")} imageWidth="30" imageHeight="30" onpress={reset} text="Reset" width="28%" height="60%"  fontSize="30" fontWeight="bold"/>
-       </View>
+      <ButtonComponent imageSource={require("../assets/images/reset.png")} imageWidth="30" imageHeight="30" onpress={reset} text="Reset" width="20%" height="60%"  fontSize="30" fontWeight="bold"/>
+
+      <ButtonComponent imageSource={require("../assets/images/mute.png")} imageWidth="30" imageHeight="30" onpress={mute} text="Mute" width="20%" height="60%"  fontSize="30" fontWeight="bold"/>
+      </View>
+      : <View style={styles.container}>
+      <ButtonComponent imageSource={isRunning ? require("../assets/images/pause.png"): require("../assets/images/start.png")} imageWidth="30" imageHeight="30" onpress={toggleWatch} text={isRunning? "Pause" : "Start"} width="28%" height="60%" fontSize="30" fontWeight="bold"/>
+
+      <ButtonComponent imageSource={require("../assets/images/reset.png")} imageWidth="30" imageHeight="30" onpress={reset} text="Reset" width="28%" height="60%"  fontSize="30" fontWeight="bold"/>
+      </View>
+
+     }
+     
        <View style={styles.container}>
        <NumberInput value={hrs} onchange={(h) => updateTargetTime(h,mins,secs)
        } />
@@ -136,8 +155,6 @@ const TimerScreen = () => {
 
        <NumberInput value={secs} onchange={(s) => updateTargetTime(hrs,mins,s)} />
        <Text style={{color:"white"}}>Seconds</Text>
-
-
        </View>
        
       </View>
