@@ -1,50 +1,56 @@
-# Welcome to your Expo app 👋
+# Remime iOS ⏰
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+An easy and efficient way to manage your time on iOS! 
+Its my first ever react native application!
+(Uses catppuccin!)
+written with ❤️  in [react-Native](https://reactnative.dev/) and [expo](https://expo.dev/) :)
 
-## Get started
+Its for the event called [cider](https://cider.hackclub.com) organised by [Hackclub](https://hackclub.com)!
+Thank you so much [@Mohammed](https://github.com/thedev132) , [@gaurav](https://github.com/yednapg) and [@faisal](https://github.com/faisalsayed10) for organizing this event!
 
-1. Install dependencies
+> [!NOTE]
+> This application is still under development, due to school examinations, I am not able to add all the features that I thought of, a huge customizability feature will be added in the next update!
 
-   ```bash
-   npm install
-   ```
+## Features 😎
 
-2. Start the app
+- A Pomodoro mode
+- Modes include: Stopwatch, Clock, Timer, and Pomodoro
+- Extremely simple, and straight-forward UI
+- Based on [Catppuccin Mocha](https://catppuccin.com/palette/) by default! (Customizability to be added in next update)
 
-   ```bash
-    npx expo start
-   ```
+> [!NOTE]
+> Fun Fact: The name Remime actually stands for "REMInd ME"
 
-In the output, you'll find options to open the app in a
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Demo
+The demo video is [here](https://cloud-pilqvqngp-hack-club-bot.vercel.app/0demo.mp4)
+![Home](https://cloud-pwmukax0c-hack-club-bot.vercel.app/0img_0068.png)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## How does it work?
 
-## Get a fresh project
+It uses react native and expo for everything. The quotes are just a few that I manually added, will add a databse for them, or will use some APIs in the future.
 
-When you're ready, run:
+## How is it different from other time applications?
 
-```bash
-npm run reset-project
-```
+It uses catppuccin! I couldn't find any application on the appstore that's based on this colorscheme and looks minimal. I tried to make it as minimal and simple as possible..
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-## Learn more
+## To-Do 🛠️
+- Get it published to the appstore
+- Customizable color scheme
+- Saving time after closing the application
+- Customizable ringtone
+- Expanding no. of quotes, its limited to just a few as of now
 
-To learn more about developing your project with Expo, look at the following resources:
+## Known bugs 🐞
+- None, please report if you find any!
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Contributing 🤝
 
-## Join the community
+Everyone is welcome to contribute to the code!
 
-Join our community of developers creating universal apps.
+You can also raise an issue, or suggest any features that you think would be great :)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+> ✨ Please star this repository if you liked this project 😁
